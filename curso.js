@@ -33,12 +33,6 @@ const curso = {
             curso.paraSerAprovado(this.listaEstudantes[i]);            
                 }
     },
-
-    avaliacaoFinal(lista) {
-        lista.map(function(estudante) {
-            return console.log(`O aluno: ${estudante[0].nome} foi Aprovado: ${estudante[1]}`);
-        });
-    },
 };
 
 console.log('==========CURSO==========');
