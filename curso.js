@@ -17,13 +17,13 @@ const curso = {
         let mediaFinal = student.calcularMedia();
         let faltas = student.quantidadeFaltas;
         if(faltas > this.faltasMaximas && mediaFinal < mediaEspecial){
-            console.log(`O aluno: ${student.nome} foi Reprovado por faltas`)
+            console.log(`O aluno: ${student.nome} foi Reprovado por faltas. Relatório: Qtd Faltas: ${student.quantidadeFaltas} - Média: ${mediaFinal}`);
             return false;
         } else if(mediaFinal < this.notaDeAprovacao){
-            console.log(`O aluno: ${student.nome} foi Reprovado por notas`)
+            console.log(`O aluno: ${student.nome} foi Reprovado por notas. Relatório: Qtd Faltas: ${student.quantidadeFaltas} - Média: ${mediaFinal}`);
             return false;
         } else {
-            console.log(`O aluno: ${student.nome} foi Aprovado`)
+            console.log(`O aluno: ${student.nome} foi Aprovado. Relatório: Qtd Faltas: ${student.quantidadeFaltas} - Média: ${mediaFinal}`);
             return true;
         }
     },    
@@ -33,6 +33,17 @@ const curso = {
             curso.paraSerAprovado(this.listaEstudantes[i]);            
                 }
     },
+
+    /*  Outra forma de fazer o verificarAprovação
+    
+    { 
+        const estudantes = this.listaEstudantes;
+        let verificar = []; 
+        estudantes.forEach(function(student){
+            verificar.push(curso.paraSerAprovado(student))
+        });
+
+        return verificar;*/
 };
 
 console.log('==========CURSO==========');
